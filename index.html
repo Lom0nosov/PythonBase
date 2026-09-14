@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Интерактивный справочник по основам Python" />
+    <title>Python Base — справочник</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <main id="top">
+        <header class="hero">
+          <a class="brand" href="#top" aria-label="Python Base — на главную">
+            <span class="brand-mark">&gt;_</span><span>Python Base</span>
+          </a>
+          <p class="eyebrow">ИНТЕРАКТИВНЫЙ КОНСПЕКТ</p>
+          <h1>Python — теория<br /><em>без поиска по тетрадям.</em></h1>
+          <p class="hero-text">Находите конструкции, примеры и методы за несколько секунд. Выберите тему или начните печатать запрос.</p>
+          <label class="search" for="search-input">
+            <span aria-hidden="true">⌕</span>
+            <input id="search-input" type="search" placeholder="Например: список, класс, lambda, super…" autocomplete="off" />
+            <kbd>Esc</kbd>
+          </label>
+          <div class="stats"><span><strong id="topic-count">0</strong> тем</span><span><strong id="oop-count">0</strong> ООП</span><span><strong id="builtin-count">0</strong> функций</span><span><strong id="method-count">0</strong> методов</span></div>
+        </header>
+
+        <div class="content-switch" role="tablist" aria-label="Раздел сайта">
+          <button class="switch-button active" data-mode="theory" role="tab" aria-selected="true">Основная теория</button>
+          <button class="switch-button" data-mode="oop" role="tab" aria-selected="false">Классы и ООП</button>
+          <button class="switch-button" data-mode="builtins" role="tab" aria-selected="false">Встроенные функции</button>
+          <button class="switch-button" data-mode="methods" role="tab" aria-selected="false">Все методы</button>
+        </div>
+
+        <section id="quick-section" class="quick-section" aria-labelledby="quick-title">
+          <div class="section-heading"><p class="eyebrow">НА 30 СЕКУНД</p><h2 id="quick-title">Самые нужные конструкции</h2></div>
+          <div id="quick-grid" class="quick-grid"></div>
+        </section>
+
+        <section id="theory-section" class="content-section" aria-labelledby="theory-title">
+          <div class="section-heading"><p class="eyebrow">ОСНОВНАЯ ТЕОРИЯ</p><h2 id="theory-title">Тема → открыть → разбор</h2></div>
+          <div id="theory-list" class="topic-list"></div>
+        </section>
+
+        <section id="oop-section" class="content-section" aria-labelledby="oop-title" hidden>
+          <div class="section-heading"><p class="eyebrow">КЛАССЫ И ООП</p><h2 id="oop-title">Тема → открыть → разбор</h2></div>
+          <div id="oop-list" class="topic-list"></div>
+        </section>
+
+        <section id="builtins-section" class="content-section" aria-labelledby="builtins-title" hidden>
+          <div class="section-heading"><p class="eyebrow">ВСТРОЕННЫЕ ФУНКЦИИ</p><h2 id="builtins-title">Функция → открыть → разбор</h2></div>
+          <div id="builtins-list" class="topic-list"></div>
+        </section>
+
+        <section id="methods-section" class="content-section methods-section" aria-labelledby="methods-title" hidden>
+          <div class="section-heading"><p class="eyebrow">ШПАРГАЛКА</p><h2 id="methods-title">Все методы коллекций</h2></div>
+          <div class="method-filters" id="method-filters"></div>
+          <div id="methods-list" class="methods-list"></div>
+        </section>
+
+        <section id="empty-state" class="empty-state" hidden>
+          <div>¯\\_(ツ)_/¯</div><h2>Ничего не найдено</h2><p>Попробуйте другое слово: например, <button data-query="список">список</button>, <button data-query="класс">класс</button> или <button data-query="lambda">lambda</button>.</p>
+        </section>
+      </main>
+    </div>
+    <button id="to-top" class="to-top" aria-label="Наверх">↑</button>
+    <div id="topic-modal" class="modal" hidden>
+      <div class="modal-backdrop" data-close-modal></div>
+      <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="modal-title" tabindex="-1">
+        <header class="modal-header">
+          <div>
+            <p class="eyebrow" id="modal-kicker">Тема</p>
+            <h2 id="modal-title"></h2>
+            <p class="modal-lead" id="modal-lead"></p>
+          </div>
+          <button type="button" class="modal-close" id="modal-close" data-close-modal aria-label="Закрыть">×</button>
+        </header>
+        <nav class="modal-toc" id="modal-toc" aria-label="Подтемы"></nav>
+        <div class="modal-body" id="modal-body"></div>
+        <footer class="modal-footer">
+          <button type="button" class="modal-nav-btn" id="modal-prev">← Предыдущая</button>
+          <button type="button" class="modal-nav-btn" id="modal-next">Следующая →</button>
+        </footer>
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
