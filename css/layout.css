@@ -1,0 +1,425 @@
+.topbar {
+  height:var(--header);
+  position:fixed;
+  inset:0 0 auto;
+  z-index:30;
+  display:flex;
+  align-items:center;
+  gap:24px;
+  padding:0 28px;
+  border:0;
+  background:var(--surface)
+}
+
+.brand {
+  display:inline-flex;
+  align-items:center;
+  gap:11px;
+  font-size:23px;
+  letter-spacing:-.7px;
+  font-weight:750;
+  white-space:nowrap
+}
+
+.brand-light {
+  font-weight:450
+}
+
+.brand-mark {
+  display:grid;
+  place-items:center;
+  width:33px;
+  height:33px;
+  border-radius:9px;
+  background:var(--ink);
+  color:var(--surface);
+  font:700 16px var(--mono)
+}
+
+.header-note {
+  font-size:9px;
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-left:23px
+}
+
+.header-search {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  margin-left:auto;
+  border:0;
+  background:var(--bg);
+  border-radius:9px;
+  padding:9px 12px;
+  min-width:330px;
+  text-align:left;
+  color:var(--muted);
+  font-size:13px
+}
+
+.header-search kbd {
+  margin-left:auto
+}
+
+.workspace {
+  padding-top:var(--header)
+}
+
+.sidebar {
+  position:fixed;
+  top:var(--header);
+  bottom:0;
+  left:0;
+  width:var(--sidebar);
+  padding:30px 20px 20px;
+  display:flex;
+  flex-direction:column;
+  overflow:auto;
+  border:0;
+  background:var(--surface);
+  z-index:25
+}
+
+.sidebar-top {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 10px 9px
+}
+
+.sidebar-top .eyebrow {
+  font-size:9px;
+  letter-spacing:2px
+}
+
+.track-link {
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:9px 10px;
+  margin-bottom:3px;
+  border-radius:7px;
+  font-size:13px;
+  font-weight:650
+}
+
+.track-link:hover {
+  background:var(--bg)
+}
+
+.track-link.active {
+  background:var(--soft);
+  color:var(--accent)
+}
+
+.track-icon {
+  font:700 10px var(--mono);
+  border:0;
+  height:22px;
+  width:22px;
+  display:grid;
+  place-items:center;
+  border-radius:6px
+}
+
+.soon {
+  font-size:9px;
+  font-weight:500;
+  color:var(--muted);
+  background:var(--bg);
+  border:0;
+  border-radius:4px;
+  padding:1px 6px;
+  margin-left:auto
+}
+
+.technology-tree {
+  margin-left:20px;
+  border:0;
+  padding-left:12px
+}
+
+.technology-link {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:13px;
+  padding:8px 9px;
+  border-radius:6px
+}
+
+.technology-link.selected {
+  color:var(--accent);
+  font-weight:650
+}
+
+.technology-link:hover {
+  background:var(--bg)
+}
+
+.python-dot {
+  height:6px;
+  width:6px;
+  border-radius:50%;
+  background:var(--accent)
+}
+
+.tree-arrow {
+  margin-left:auto;
+  color:var(--muted)
+}
+
+.category-tree {
+  padding:2px 0 9px 9px
+}
+
+.category-tree a {
+  display:flex;
+  gap:9px;
+  align-items:center;
+  padding:8px 9px;
+  font-size:11.5px;
+  line-height:1.4;
+  color:var(--muted);
+  border-radius:6px;
+  margin-bottom:2px
+}
+
+.category-tree a span {
+  margin-left:auto;
+  font:9px var(--mono);
+  opacity:.7
+}
+
+.category-tree a:hover {
+  background:var(--bg);
+  color:var(--ink)
+}
+
+.category-tree a.active {
+  background:var(--soft);
+  color:var(--accent);
+  font-weight:650
+}
+
+.sidebar-personal {
+  border:0;
+  margin-top:24px;
+  padding-top:20px
+}
+
+.saved-count {
+  margin-left:auto;
+  font:10px var(--mono);
+  color:var(--muted)
+}
+
+.sidebar-bottom {
+  margin-top:auto;
+  padding:36px 10px 4px;
+  font-size:11px;
+  color:var(--muted)
+}
+
+.sidebar-bottom small {
+  display:block;
+  padding-left:14px;
+  font-size:10px;
+  margin-top:4px
+}
+
+.status-dot {
+  display:inline-block;
+  width:5px;
+  height:5px;
+  background:var(--accent);
+  border-radius:50%;
+  margin-right:8px;
+  vertical-align:middle
+}
+
+main {
+  margin-left:var(--sidebar);
+  padding:30px clamp(25px,4vw,64px) 0;
+  min-height:calc(100vh - var(--header));
+  max-width:1600px
+}
+
+.breadcrumbs {
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px;
+  font-size:11px;
+  color:var(--muted);
+  margin-bottom:36px
+}
+
+.breadcrumbs a:hover {
+  color:var(--accent)
+}
+
+.breadcrumbs span[aria-current] {
+  color:var(--ink)
+}
+
+.page-heading {
+  max-width:830px;
+  margin:48px 0 36px
+}
+
+.page-heading h1 {
+  margin-bottom:16px
+}
+
+.page-heading p:not(.eyebrow) {
+  color:var(--muted);
+  font-size:16px;
+  max-width:650px
+}
+
+.page-footer {
+  border:0;
+  margin-top:65px;
+  padding:24px 0;
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  font-size:10px;
+  color:var(--muted)
+}
+
+.page-footer a:hover {
+  color:var(--accent)
+}
+
+.footer-dot {
+  margin:0 8px
+}
+
+.menu-toggle,.mobile-only,.nav-backdrop {
+  display:none
+}
+
+.back-top {
+  position:fixed;
+  bottom:24px;
+  right:24px;
+  z-index:20;
+  background:var(--surface)
+}
+
+.toast {
+  position:fixed;
+  bottom:25px;
+  left:50%;
+  transform:translate(-50%,15px);
+  max-width:calc(100vw - 30px);
+  background:var(--ink);
+  color:var(--surface);
+  border-radius:10px;
+  padding:12px 22px;
+  z-index:150;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s,transform .15s;
+  font-size:13px
+}
+
+.toast.visible {
+  opacity:1;
+  transform:translate(-50%,0)
+}
+
+/* The shell stays quiet so that content and search carry the page. */
+.topbar {
+  background:rgba(250,250,252,.86);
+  backdrop-filter:saturate(160%) blur(24px);
+  -webkit-backdrop-filter:saturate(160%) blur(24px)
+}
+
+html[data-theme=dark] .topbar {
+  background:rgba(28,28,30,.86)
+}
+
+.brand {
+  font-size:22px;
+  font-weight:650;
+  letter-spacing:-.8px
+}
+
+.brand-mark {
+  border-radius:10px;
+  font-size:15px
+}
+
+.header-note {
+  letter-spacing:1.4px;
+  font-size:10px
+}
+
+.header-search {
+  min-height:42px;
+  border-radius:12px;
+  background:var(--bg);
+  font-size:13px
+}
+
+.header-search:hover {
+  border-color:var(--accent)
+}
+
+.sidebar {
+  background:var(--bg);
+  padding-top:28px
+}
+
+.track-link {
+  min-height:42px;
+  font-weight:550
+}
+
+.category-tree a {
+  font-size:12px;
+  min-height:38px
+}
+
+.technology-link {
+  min-height:42px
+}
+
+.track-link.active,.category-tree a.active {
+  background:var(--surface);
+  color:var(--accent);
+  box-shadow:0 2px 7px #00000006
+}
+
+.soon {
+  border:0;
+  border-radius:5px
+}
+
+.breadcrumbs {
+  font-size:12px
+}
+
+.page-heading h1 {
+  font-weight:650
+}
+
+.page-footer {
+  font-size:11px;
+  line-height:1.7
+}
+
+.toast {
+  border-radius:24px;
+  box-shadow:0 8px 35px #0002
+}
+
+.back-top {
+  background:var(--surface);
+  box-shadow:0 4px 18px #0001;
+  border:0
+}
